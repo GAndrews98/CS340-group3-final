@@ -1,0 +1,23 @@
+<h1>{{pageName}}'s Players</h1>
+<table id="t01" border="1">
+    <thead>
+        <tr>
+            <th>Player Name</th>
+            <th>Years Active</th>
+            <th>Statistics</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#if rows.length }}
+            {{#each rows }}
+                <tr>
+                    <td>{{this.name}}</td>
+                    <td>{{this.year}}</td>
+                    <td><a href="/statistics/{{this.player_id}}">View Statistics</a></td>
+                </tr>
+            {{/each}}
+        {{else}}
+            <tr><td colspan="3"><p class='lead'><em>No records were found.</em></p></td></tr>
+        {{/if}}
+    </tbody>
+</table>

@@ -1,0 +1,27 @@
+<h1>{{pageName}}'s Teams</h1>
+<table id="t01" border="1">
+    <thead>
+        <tr>
+            <th>Team Name</th>
+            <th>Gender</th>
+            <th>Level</th>
+            <th>Games</th>
+            <th>Players</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#if rows.length }}
+            {{#each rows }}
+                <tr>
+                    <td>{{this.schoolname}}</td>
+                    <td>{{this.gender}}</td>
+                    <td>{{this.level}}</td>
+                    <td><a href="/games/{{this.team_id}}">View Games</a></td>
+                    <td><a href="/players/{{this.team_id}}">View Players</a>
+                </tr>
+            {{/each}}
+        {{else}}
+            <tr><td colspan="3"><p class='lead'><em>No records were found.</em></p></td></tr>
+        {{/if}}
+    </tbody>
+</table>
