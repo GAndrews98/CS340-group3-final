@@ -12,7 +12,6 @@ const router = express.Router();
 router.get('/schools/:school', (req, res, next) => {
     var school = req.params.school;
     var query = `SELECT * FROM Teams T WHERE T.schoolname ="` + school + `"`;
-    console.log(query);
     req.db.query(
         query,
         (err, results) => {

@@ -9,6 +9,7 @@ const teamsRouter = require('./routes/teams');
 const schoolsRouter = require('./routes/schools');
 const topRecordsRouter = require('./routes/top-records');
 const personalStatsRouter = require('./routes/personal-stats');
+const addPlayerRouter = require('./routes/add-player');
 
 const config = require('./config');
 
@@ -60,7 +61,12 @@ app.use(teamsRouter);
 app.use(schoolsRouter);
 app.use(topRecordsRouter);
 app.use(personalStatsRouter);
+app.use(addPlayerRouter);
 
+app.use('/help', (req, res) => {
+    res.status(200);
+    res.render('help', createViewContext());
+});
 // Add a handler to render a 404 view
 app.use('*', (req, res) => {
     res.status(404);
@@ -79,5 +85,5 @@ app.use((err, req, res, next) => {
 
 // Start our server
 app.listen(PORT, () => {
-    console.log('Activity 1 Server is listening on port ' + PORT);
+    console.log('Object Opposition League Server is listening on port ' + PORT);
 });

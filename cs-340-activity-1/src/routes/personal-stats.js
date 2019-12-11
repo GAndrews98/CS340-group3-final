@@ -12,18 +12,20 @@ const router = express.Router();
 router.get('/statistics/:player', (req, res, next) => {
     var player = req.params.player;
     var query = `SELECT * FROM Records R WHERE R.player_id =` + player;
-    console.log(query);
     req.db.query(
         query,
         (err, results) => {
             if (err) return next(err);
-            res.render(
-                'personal-stats',
-                createViewContext({
-                    pageName: player,
-                    rows: results
-                })
-            );
+            req.db.query('SELECT name FROM Players P WHERE P.player_id = ' + player, (err, resultsP) => {
+                playerName = resultsP[0].name;
+                res.render(
+                    'personal-stats',
+                    createViewContext({
+                        pageName: playerName,
+                        rows: results
+                    })
+                );
+            });
         }
     );
 });

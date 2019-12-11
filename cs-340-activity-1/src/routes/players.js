@@ -16,14 +16,17 @@ router.get('/players/:team', (req, res, next) => {
         ,
         (err, results) => {
             if (err) return next(err);
-            console.log(results);
-            res.render(
-                'players',
-                createViewContext({
-                    pageName: team,
-                    rows: results
-                })
-            );
+            req.db.query('SELECT schoolname FROM Teams T WHERE T.team_id = ' + team, (err, resultsT) => {
+                teamName = resultsT[0].schoolname;
+                res.render(
+                    'players',
+                    createViewContext({
+                        pageName: teamName,
+                        linkName: team,
+                        rows: results
+                    })
+                );
+            });
         }
     );
 });
