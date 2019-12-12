@@ -1,20 +1,34 @@
+@font-face {
+	font-family: sports;
+	src:url(sfsportsnight.ttf);
+}
+
+@font-face {
+	font-family: robotocon;
+	src:url(robotocondensed.ttf);
+}
+
 header {
 
-	height: 20px;
+	height: 25px;
 	background-color: lightgray;
 	margin-top: 0px;
 	margin-right: 0px;
 	margin-bottom: 0px;
 	padding: 20px 20px 20px 20px;
-	font-size: 1.5em;
+	font-size: 2em;
+	font-family: sports;
 
 }
+
 header > h1 {
 	color: white;
 	font-size : 3em;
 	font-style: italic;
 	text-align: left;
 }
+
+
 header > img {
     float: left;
     margin: 0 0 10px 10px;
@@ -24,6 +38,7 @@ header em {
 	font-size: 0.75em
 }
 
+
 html, body {
 	margin: 0px;
 	padding: 0px;
@@ -31,7 +46,7 @@ html, body {
 
 html {
 	background-color: light gray;
-	font-family: Helvetica;
+	font-family: robotocon;
 	font-size: 18px;
 }
 nav ul {
@@ -43,13 +58,14 @@ nav ul {
 }
 
 nav li {
+	font-family: robotocon;
     float: left;
     border-right:1px solid #bbb;
 }
 
-nav li:nth-last-child(-n+5){
+nav li:nth-last-child(1){
     border-right: none;
-    float: left;
+    float: right;
     border-left:1px solid #bbb;
 }
 
@@ -258,24 +274,24 @@ table {
     width: 100%;
 }
 
-table#t01 {
+table.t01 {
 	width:400px;
 }
 
-table#t01 tr:nth-child(even) {
+table.t01 tr:nth-child(even) {
   background-color: #e0ebeb;
 }
 
-table#t01 tr:nth-child(odd) {
+table.t01 tr:nth-child(odd) {
   background-color: #fff;
 }
 
-table#t01 th {
+table.t01 th {
   background-color: black;
   color: white;
 }
 
-#t01  tr:hover {
+.t01  tr:hover {
   background-color: orange;
   color: orange;
 }

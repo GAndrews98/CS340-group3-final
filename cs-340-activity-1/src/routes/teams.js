@@ -25,6 +25,8 @@ router.get('/schools/:school', (req, res, next) => {
             );
         }
     );
+
 });
+
 
 module.exports = router;
