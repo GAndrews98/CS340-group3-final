@@ -5,6 +5,7 @@
             <th>Player Name</th>
             <th>Years Active</th>
             <th>Statistics</th>
+            <th>Delete Player</th>
         </tr>
     </thead>
     <tbody>
@@ -14,6 +15,7 @@
                     <td>{{this.name}}</td>
                     <td>{{this.year}}</td>
                     <td><a href="/statistics/{{this.player_id}}">View Statistics</a></td>
+                    <td><a href="/delete/{{this.player_id}}">Delete Player</a></td>
                 </tr>
             {{/each}}
         {{else}}

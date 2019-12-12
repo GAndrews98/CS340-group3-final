@@ -10,6 +10,7 @@ const schoolsRouter = require('./routes/schools');
 const topRecordsRouter = require('./routes/top-records');
 const personalStatsRouter = require('./routes/personal-stats');
 const addPlayerRouter = require('./routes/add-player');
+const deleteRouter = require('./routes/delete');
 
 const config = require('./config');
 
@@ -62,6 +63,7 @@ app.use(schoolsRouter);
 app.use(topRecordsRouter);
 app.use(personalStatsRouter);
 app.use(addPlayerRouter);
+app.use(deleteRouter);
 
 app.use('/help', (req, res) => {
     res.status(200);
